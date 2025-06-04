@@ -1,4 +1,3 @@
-TALLERES/
-  ruta_origen.txt
-  YYYY-MM-DD_nombre_taller/
-  nw_workshop.bat
+TALLERES/ruta_origen.txt
+TALLERES/YYYY-MM-DD_nombre_taller/
+TALLERES/nw_workshop.bat
