@@ -1,71 +1,74 @@
-import React, { useRef, useState } from 'react';
+
+
+import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Line } from '@react-three/drei';
-import { useControls } from 'leva';
-import * as THREE from 'three';
 
-export default function Arm() {
-  const baseRef = useRef();
-  const midRef = useRef();
-  const endRef = useRef();
-  const [points, setPoints] = useState([]);
-  const maxPoints = 200;
+export default function ArmLinks() {
+  const segmentCount = 3;
+  const length = 2;
+  const thickness = 0.2;
+  const refs = useRef(Array(segmentCount).fill().map(() => React.createRef()));
+  const targetRef = useRef();
 
-  const {
-    baseAngle = 0,
-    midAngle = 0,
-    endAngle = 0,
-    animateSpeed = 1,
-    animate = false
-  } = useControls({
-    baseAngle: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01 },
-    midAngle: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01 },
-    endAngle: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01 },
-    animateSpeed: { value: 1, min: 0.1, max: 5, step: 0.1 },
-    animate: false
-  });
+  
+  useFrame(() => {
+  if (!targetRef.current) return;
+  
+  // 1) posición objetivo en world coords
+  const targetPos = new THREE.Vector3();
+  targetRef.current.getWorldPosition(targetPos);
 
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime() * animateSpeed;
-    const a1 = animate ? Math.sin(t) : baseAngle;
-    const a2 = animate ? Math.sin(t * 1.2) : midAngle;
-    const a3 = animate ? Math.sin(t * 1.5) : endAngle;
-
-    if (baseRef.current) baseRef.current.rotation.z = a1;
-    if (midRef.current) midRef.current.rotation.z = a2;
-    if (endRef.current) endRef.current.rotation.z = a3;
-
-    const pos = new THREE.Vector3();
-    endRef.current.getWorldPosition(pos);
-
-    setPoints((prev) => {
-      const next = [...prev, [pos.x, pos.y, pos.z]];
-      if (next.length > maxPoints) next.shift();
-      return next;
-    });
-  });
+  // 2) para cada segmento, desde la punta hacia la base:
+  for (let i = segmentCount - 1; i >= 0; i--) {
+    const joint = refs.current[i].current;        // grupo de la articulación
+    const endEff = refs.current[segmentCount - 1].current;  // grupo punta
+    
+    // a) posición de la articulación en world
+    const jointPos = new THREE.Vector3();
+    joint.getWorldPosition(jointPos);
+    
+    // b) posición de la punta en world
+    const endPos = new THREE.Vector3();
+    endEff.getWorldPosition(endPos);
+    
+    // c) vectores a alinear
+    const toEnd = endPos.clone().sub(jointPos).normalize();
+    const toTarget = targetPos.clone().sub(jointPos).normalize();
+    
+    // d) ángulo entre vectores
+    const cosAngle = THREE.MathUtils.clamp(toEnd.dot(toTarget), -1, 1);
+    let angle = Math.acos(cosAngle);             // en radianes
+    
+    // e) ejes de rotación (cruz de los dos vectores)
+    const axis = toEnd.clone().cross(toTarget).normalize();
+    if (axis.length() < 1e-3) continue;            // si casi colineales, saltamos
+    
+    // f) aplicar rotación al joint (en space local)
+    const quat = new THREE.Quaternion().setFromAxisAngle(axis, angle);
+    joint.quaternion.multiply(quat);
+  }
+});
 
   return (
-    <>
-      <group ref={baseRef}>
-        <mesh position={[1, 0, 0]}>
-          <boxGeometry  args={[2, 0.2, 0.2]} />
+    <group>
+      <group ref={refs.current[0]}>
+        <mesh position={[length / 2, 0, 0]}>
+          <boxGeometry args={[length, thickness, thickness]} />
           <meshStandardMaterial color="orange" />
         </mesh>
-        <group ref={midRef} position={[2, 0, 0]}>
-          <mesh position={[1, 0, 0]}>
-            <boxGeometry  args={[2, 0.2, 0.2]} />
+        <group ref={refs.current[1]} position={[length, 0, 0]}>
+          <mesh position={[length / 2, 0, 0]}>
+            <boxGeometry args={[length, thickness, thickness]} />
             <meshStandardMaterial color="hotpink" />
           </mesh>
-          <group ref={endRef} position={[2, 0, 0]}>
-            <mesh position={[1, 0, 0]}>
-              <boxGeometry  args={[2, 0.2, 0.2]} />
+          <group ref={refs.current[2]} position={[length, 0, 0]}>
+            <mesh position={[length / 2, 0, 0]}>
+              <boxGeometry args={[length, thickness, thickness]} />
               <meshStandardMaterial color="lightblue" />
             </mesh>
           </group>
         </group>
       </group>
-      {points.length > 1 && <Line points={points} lineWidth={2} color="white" />}
-    </>
+    </group>
   );
 }
