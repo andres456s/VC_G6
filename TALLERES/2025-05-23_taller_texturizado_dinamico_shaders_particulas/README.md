@@ -162,7 +162,7 @@ Describe exactamente lo que hiciste tú:
 
 ## ✅ Checklist de Entrega
 
-- [x] Carpeta `YYYY-MM-DD_nombre_taller`
+- [x] Carpeta `2025-05-23_taller_texturizado_dinamico_shaders_particulas`
 - [x] Código limpio y funcional
 - [x] GIF incluido con nombre descriptivo (si el taller lo requiere)
 - [x] Visualizaciones o métricas exportadas
