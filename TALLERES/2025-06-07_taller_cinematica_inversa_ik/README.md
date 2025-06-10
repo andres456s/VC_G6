@@ -1,76 +1,76 @@
-    # 🧪 Taller - Cinemática Inversa: Haciendo que el Modelo Persiga Objetivos
+# 🧪 Taller - Cinemática Inversa: Haciendo que el Modelo Persiga Objetivos
 
 
-    ## 📅 Fecha
-    `2025-06-07` – Fecha de realización
+## 📅 Fecha
+2025-06-07 – Fecha de realización
 
-    ---
+---
 
-    ## 🎯 Objetivo del Taller
+## 🎯 Objetivo del Taller
 
-    Aplicar cinemática inversa (IK, Inverse Kinematics) para que un modelo 3D alcance un punto objetivo dinámico, como un brazo  intentando alcanzar una esfera. Este ejercicio permite comprender cómo una cadena de articulaciones puede ajustarse automáticamente para alcanzar una posición deseada usando algoritmos como CCD o FABRIK.
-    ---
+Aplicar cinemática inversa (IK, Inverse Kinematics) para que un modelo 3D alcance un punto objetivo dinámico, como un brazo  intentando alcanzar una esfera. Este ejercicio permite comprender cómo una cadena de articulaciones puede ajustarse automáticamente para alcanzar una posición deseada usando algoritmos como CCD o FABRIK.
+---
 
-    ## 🧠 Conceptos Aprendidos
+## 🧠 Conceptos Aprendidos
 
-    Lista los principales conceptos aplicados:
+Lista los principales conceptos aplicados:
 
-    - [x] Cinemática inversa
-    - [x] Algoritmo CCD
-    - [x] Modelos 3D
-    - [x] Animación
-
-
-
-    ---
-
-    ## 🔧 Herramientas y Entornos
-
-    Especifica los entornos usados:
-
-    - Visual Studio Codde
-    - Three.js / React Three Fiber
+- [x] Cinemática inversa
+- [x] Algoritmo CCD
+- [x] Modelos 3D
+- [x] Animación
 
 
 
-    ---
+---
 
-    ## 📁 Estructura del Proyecto
+## 🔧 Herramientas y Entornos
 
-    ```
-    2025-06-07_taller_cinematica_inversa_ik/
-    ├── threejs/               #  threejs/, entorno de ejecución
-        ├── public/                 # Gif
-        ├── src/                 # Código fuente
-            ├── components/            # Carpeta de los componentes
-                ├── ArmLinks.jsx/            #  Componente brazo
-                ├── ArmWithCCD.jsx/            #  Componente de background
-                ├── BackgroundPlane.jsx/            #  Componente brazo
-                ├── DraggableSphere.jsx/            #  Componente esfera
-                ├── LevaSphere.jsx/            #  Componente esfera con leva
-    ├── README.md
-    ```
+Especifica los entornos usados:
+
+- Visual Studio Codde
+- Three.js / React Three Fiber
 
 
-    ---
 
-    ## 🧪 Implementación
+---
 
-    Explica el proceso:
+## 📁 Estructura del Proyecto
 
-    ### 🔹 Etapas realizadas
-    1. Crear meshs conectados a un grupo
-    2. Calcular el vector desde extremo del brazo al objetivo
-    3. Implementar CCD
-    3. Implementar una linea que trace la trayectoria la objetivo.
-    4. Visualizar el resultado y guardar los resultados.
+```
+2025-06-07_taller_cinematica_inversa_ik/
+├── threejs/               #  threejs/, entorno de ejecución
+    ├── public/                 # Gif
+    ├── src/                 # Código fuente
+        ├── components/            # Carpeta de los componentes
+            ├── ArmLinks.jsx/            #  Componente brazo
+            ├── ArmWithCCD.jsx/            #  Componente de background
+            ├── BackgroundPlane.jsx/            #  Componente brazo
+            ├── DraggableSphere.jsx/            #  Componente esfera
+            ├── LevaSphere.jsx/            #  Componente esfera con leva
+├── README.md
+```
 
 
-    ### 🔹 Código relevante
+---
 
-    Fragmento que resume el corazón del taller:
+## 🧪 Implementación
 
-    ```js
+Explica el proceso:
+
+### 🔹 Etapas realizadas
+1. Crear meshs conectados a un grupo
+2. Calcular el vector desde extremo del brazo al objetivo
+3. Implementar CCD
+3. Implementar una linea que trace la trayectoria la objetivo.
+4. Visualizar el resultado y guardar los resultados.
+
+
+### 🔹 Código relevante
+
+Fragmento que resume el corazón del taller:
+
+```js
     export default function ArmWithCCD({ targetRef }) {
     const segmentCount = 3;
     const segmentLength = 2;
@@ -135,61 +135,61 @@
         ]);
     });
 
-    ```
+```
 
-    ---
+---
 
-    ## 📊 Resultados Visuales
+## 📊 Resultados Visuales
 
-    ### 📌 GIFs animado:
-
-
-    ![Demostración del funcionamiento del brazo con segmentos en threejs](./threejs/cinematicaInversa/public/DemostracionBrazoCinematicaInversa.gif)
+### 📌 GIFs animado:
 
 
-
-    ---
-
-    ## 🧩 Prompts Usados
-
-    Prompts utilizados:
-
-    - Como hago un brazo con segmentos con meshs en un group
-    - Como calculo un vector desde el extremo del brazo al objetivo
-    - Agrega linea desde el extremo del brazo hacía el objetivo
+![Demostración del funcionamiento del brazo con segmentos en threejs](./threejs/cinematicaInversa/public/DemostracionBrazoCinematicaInversa.gif)
 
 
 
-    ---
+---
 
-    ## 💬 Reflexión Final
+## 🧩 Prompts Usados
 
-    Responde en 2-3 párrafos:
+Prompts utilizados:
 
-    - ¿Qué aprendiste o reforzaste con este taller? Como animar un brazo con un objetivo presente
-    - ¿Qué parte fue más compleja o interesante? Calcular el vector del extremo del brazo al objetivo.
-    - ¿Qué mejorarías o qué aplicarías en futuros proyectos? Aplicar a modelo de un brazo
-    ---
+- Como hago un brazo con segmentos con meshs en un group
+- Como calculo un vector desde el extremo del brazo al objetivo
+- Agrega linea desde el extremo del brazo hacía el objetivo
 
-    ## 👥 Contribuciones 
 
-    Describe exactamente lo que hiciste tú:
 
-    ```markdown
-    - Programé los movimientos del brazo
-    - Integré el código generado por modelos de IA.
-    - Generé documentación y GIFS.
-    ```
+---
 
-    ---
+## 💬 Reflexión Final
 
-    ## ✅ Checklist de Entrega
+Responde en 2-3 párrafos:
 
-    - [x] Carpeta `2025-06-07_taller_cinematica_inversa_ik`
-    - [x] Código limpio y funcional
-    - [x] GIF incluido con nombre descriptivo 
-    - [x] Visualizaciones o métricas exportadas
-    - [x] README completo y claro
-    - [x] Commits descriptivos en inglés
+- ¿Qué aprendiste o reforzaste con este taller? Como animar un brazo con un objetivo presente
+- ¿Qué parte fue más compleja o interesante? Calcular el vector del extremo del brazo al objetivo.
+- ¿Qué mejorarías o qué aplicarías en futuros proyectos? Aplicar a modelo de un brazo
+---
+
+## 👥 Contribuciones 
+
+Describe exactamente lo que hiciste tú:
+
+    
+- Programé los movimientos del brazo
+- Integré el código generado por modelos de IA.
+- Generé documentación y GIFS.
+
+
+---
+
+## ✅ Checklist de Entrega
+
+- [x] Carpeta `2025-06-07_taller_cinematica_inversa_ik`
+- [x] Código limpio y funcional
+- [x] GIF incluido con nombre descriptivo 
+- [x] Visualizaciones o métricas exportadas
+- [x] README completo y claro
+- [x] Commits descriptivos en inglés
 
     ---
