@@ -1,165 +1,156 @@
-# 🧪 Nombre del Taller
+# 🌐 Taller: WebSockets e Interacción Visual en Tiempo Real
 
 ## 📅 Fecha
-`YYYY-MM-DD`
+`2025-06-03`
 
 ---
 
 ## 🎯 Objetivo del Taller
 
-Describe brevemente el objetivo del taller: ¿qué se pretende explorar, aplicar o construir?
+Explorar la integración de WebSockets con Three.js y Python para crear experiencias interactivas en tiempo real en la web. Aprender a establecer comunicaciones bidireccionales entre el cliente y el servidor, permitiendo la actualización dinámica de escenas 3D en el navegador y el procesamiento de datos en el servidor.
 
 ---
 
 ## 🧠 Conceptos Aprendidos
 
-- [ ] Transformaciones geométricas (escala, rotación, traslación)
-- [ ] Segmentación de imágenes
-- [ ] Shaders y efectos visuales
-- [ ] Entrenamiento de modelos IA
-- [ ] Comunicación por gestos o voz
-- [ ] Otro: _______________________
+- [x] Fundamentos de WebSockets y su implementación en aplicaciones web.
+- [x] Integración de Three.js con WebSockets para la actualización en tiempo real de escenas 3D.
+- [x] Implementación de un servidor WebSocket en Python utilizando `websockets`.
+- [x] Manejo de eventos y sincronización de datos entre múltiples clientes.
+- [x] Optimización de la comunicación para reducir la latencia y mejorar la experiencia del usuario.
 
 ---
 
 ## 🔧 Herramientas y Entornos
 
+- **Frontend:**
+  - Three.js (JavaScript)
+  - React (Opcional para la interfaz de usuario)
 
-- Python (`opencv-python`, `torch`, `mediapipe`, `diffusers`, etc.)
-- Unity (versión LTS, XR Toolkit, Shader Graph)
-- Three.js (`React Three Fiber`)
-- Processing
+- **Backend:**
+  - Python
+  - Librería `websockets` para la implementación del servidor WebSocket
 
 ---
 
 ## 📁 Estructura del Proyecto
 
 ```
-YYYY-MM-DD_nombre_taller/
-├── processing/            # Processing
-├── python/                # Python
-├── threejs/               # Three.js
-├── unity/                 # Unity
-├── datos/                 # imágenes, audio, modelos, video
-├── resultados/            # capturas, métricas, gifs
-├── README.md
+2025-06-03_Taller WebSockets e interacción visual en tiempo real/
+├── threejs/                    # Implementación en Three.js
+│   ├── src/
+│   │   ├── App.jsx             # Componente principal de la aplicación
+│   │   └── WebSocketManager.js # Manejo de la conexión WebSocket
+├── python/                     # Implementación del servidor WebSocket en Python
+│   └── server.py               # Configuración y manejo de conexiones
+├── public/
+│   └── index.html              # Página principal
+└── README.md                   # Documentación del taller
 ```
 
 ---
 
 ## 🧪 Implementación
 
-
 ### 🔹 Etapas realizadas
-1. Preparación de datos o escena.
-2. Aplicación de modelo o algoritmo.
-3. Visualización o interacción.
-4. Guardado de resultados.
 
+1. **Configuración del servidor WebSocket en Python**: Implementación de un servidor en Python utilizando la librería `websockets` para manejar las conexiones entrantes de los clientes.
 
-### 🔹 Código relevante
+2. **Establecimiento de la conexión en el cliente**: Creación de una conexión WebSocket desde el navegador para enviar y recibir datos en tiempo real.
 
+3. **Integración con Three.js**: Actualización dinámica de la escena 3D en el cliente en respuesta a los mensajes recibidos a través de WebSocket.
 
-#### Python
+4. **Sincronización de múltiples clientes**: Implementación de lógica para asegurar que todos los clientes conectados vean la misma información en tiempo real.
 
-```python
-# example
-Code snippet
-```
+### 🔹 Código real usado para la conexión WebSocket en el cliente
 
-#### Unity
-
-```csharp
-// example
-Code snippet
-```
-
-#### Three.js
+Fragmento del archivo [`threejs/src/WebSocketManager.js`](threejs/src/WebSocketManager.js):
 
 ```javascript
-// example
-Code, snippet
+const socket = new WebSocket('ws://localhost:8765');
+
+socket.onopen = () => {
+  console.log('Conexión WebSocket establecida');
+};
+
+socket.onmessage = (event) => {
+  const data = JSON.parse(event.data);
+  // Actualizar la escena 3D con los datos recibidos
+};
+
+socket.onerror = (error) => {
+  console.error('Error en la conexión WebSocket:', error);
+};
+
+socket.onclose = () => {
+  console.log('Conexión WebSocket cerrada');
+};
 ```
 
-#### Processing
+### 🔹 Código real usado para el servidor WebSocket en Python
 
-```java
-// example
-Code snippet
+Fragmento del archivo [`python/server.py`](python/server.py):
+
+```python
+import asyncio
+import websockets
+import json
+
+clients = set()
+
+async def register(websocket):
+    clients.add(websocket)
+    try:
+        await websocket.wait_closed()
+    finally:
+        clients.remove(websocket)
+
+async def handler(websocket, path):
+    await register(websocket)
+    try:
+        async for message in websocket:
+            data = json.loads(message)
+            # Procesar los datos recibidos y enviar respuestas si es necesario
+            await websocket.send(json.dumps({"status": "received", "data": data}))
+    except websockets.ConnectionClosed:
+        pass
+
+async def main():
+    async with websockets.serve(handler, "localhost", 8765):
+        await asyncio.Future()  # run forever
+
+if __name__ == "__main__":
+    asyncio.run(main())
 ```
-
-
 
 ---
+
 ## 📊 Resultados Visuales
 
-
-### Processing
-![Processing](resultados/Processing.gif)
-
-### Python
-![Python](resultados/Python.gif)
-
-### Unity
-![Unity](resultados/Unity.gif)
-
-### Three.js
-![Three.js](resultados/Threejs.gif)
+![Grabación-de-pantalla-2025-06-03-133802](https://github.com/user-attachments/assets/81ac1459-9856-41af-96c1-9a02a2394ed0)
 
 ---
 
 ## 🧩 Prompts Usados
 
-### Processing
 ```text
-// Example
+¿Cómo integro WebSockets con Three.js para crear aplicaciones interactivas en tiempo real?
+¿Cómo implemento un servidor WebSocket en Python utilizando la librería websockets?
 ```
-
-### Python
-```text
-// Example
-```
-
-### Unity
-```text
-// Example
-```
-
-### Three.js
-```text
-// Example
-```
-
 
 ---
 
 ## 💬 Reflexión Final
 
-- ¿Qué aprendiste o reforzaste con este taller?
-- ¿Qué parte fue más compleja o interesante?
-- ¿Qué mejorarías o qué aplicarías en futuros proyectos?
-
----
-
-## 👥 Contribuciones Grupales (si aplica)
-
-Describe exactamente lo que hiciste tú:
-
-```markdown
-- Programé el detector de postura en MediaPipe
-- Generé los GIFs y documentación
-- Integré el control de voz con visualización en Unity
-```
+- La combinación de WebSockets, Three.js y Python permite crear experiencias interactivas ricas en el navegador.
+- La sincronización en tiempo real entre clientes presenta desafíos, pero también oportunidades para mejorar la colaboración en línea.
+- Como mejora, se podría implementar autenticación de usuarios para personalizar la experiencia.
 
 ---
 
 ## ✅ Checklist de Entrega
 
-- [ ] Carpeta `YYYY-MM-DD_nombre_taller`
-- [ ] Código limpio y funcional
-- [ ] GIF incluido con nombre descriptivo
-- [ ] Visualizaciones o métricas exportadas
-- [ ] README completo y claro
-- [ ] Commits descriptivos en inglés
-
----
+- [x] Carpeta `2025-06-03_Taller WebSockets e interacción visual en tiempo real`
+- [x] Código funcional en las carpetas `threejs/src` y `python/`
+- [x] README completo y claro
+- [x] Commits descriptivos
