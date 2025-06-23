@@ -1,0 +1,5 @@
+ultralytics>=8.0.0      # Modelo YOLOv8 y dependencias incluidas :contentReference[oaicite:1]{index=1}
+torch>=1.8             # Dependencia principal de ultralytics para inferencia :contentReference[oaicite:2]{index=2}
+opencv-python          # Captura de video y visualización de resultados
+numpy                  # Procesamiento de cajas y datos numéricos
+matplotlib             # Gráficos en vivo (plt.ion(), FuncAnimation)
