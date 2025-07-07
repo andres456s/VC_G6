@@ -52,7 +52,7 @@ El notebook contiene:
 
 ## Pasos Realizados
 
-**- Paso 1: Captura de Imágenes**
+**Paso 1: Captura de Imágenes**
 - Se capturaron 10 imágenes de un tablero de ajedrez desde distintos ángulos y distancias.
 - Las imágenes se almacenaron en la carpeta imagenes_originales/.
 
@@ -68,12 +68,12 @@ Imagen Distorsionada
 
 ![Imagen Distorsionada](1distorsionada.jpeg)
 
-**- Paso 3: Detección del Patrón**
+**Paso 3: Detección del Patrón**
 
 - Se detectaron las esquinas internas del tablero en cada imagen distorsionada.
 - Las imágenes detectadas se almacenaron en la carpeta imagenes_detectadas/.
 
-**- Paso 4: Calibración de la Cámara**
+**Paso 4: Calibración de la Cámara**
 
 - Se calculó la matriz de calibración y los coeficientes de distorsión.
 - Error medio cuadrático de reproyección: 0.11854951656471187
