@@ -2,9 +2,11 @@
 
 Este proyecto corresponde al primer taller práctico del curso y tiene como objetivo aplicar técnicas de calibración de cámara utilizando OpenCV y Python en un entorno de Jupyter Notebook.
 
+Link del taller: https://gitlab.com/anmorenop-computacion-visual/tallerpractico1_calibracion
+
 ## 🎯 Objetivo
 
-Implementar un proceso de calibración de cámara usando imágenes de un tablero de ajedrez para obtener los parámetros intrínsecos y extrínsecos, así como coeficientes de distorsión. Se aplica además una corrección visual mediante el modelo calibrado.
+Implementar un proceso de caibración de cámara usando imágenes de un tablero de ajedrez para obtener los parámetros intrínsecos y extrínsecos, así como coeficientes de distorsión. Se aplica además una corrección visual mediante el modelo calibrado.
 
 ## 🗂 Estructura del Proyecto
 
