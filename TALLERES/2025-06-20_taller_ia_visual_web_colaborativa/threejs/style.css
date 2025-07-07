@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #111;
+  color: #eee;
+  text-align: center;
+}
+
+#container {
+  width: 100vw;
+  height: 90vh;
+}
