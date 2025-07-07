@@ -25,6 +25,8 @@ Desde  StableDiffusionPipeline se trajo stable-diffusion-v1-5, este modelo ya pr
 # Código principal (o enlace al notebook).
 https://colab.research.google.com/drive/1ns9t-NSW2JxFYKq4bi61wwy8of5XqM-I?usp=sharing
 # Descripción general de los prompts usados (obligatoria).
+Se le cargo el objetivo del taller y las instrucciones dadas, luego de esto se le pidio que buscara en internet para cargar el modelo de forma adecuada, luego que valores poner en los parametros para ver como afectan a las imagenes, después que me diga como guardar los resultados y luego que con matplotlib generar graficos comparativos.
+
 # Reflexión: ¿cómo influye cada parámetro en la imagen final?, ¿qué estilos fueron más satisfactorios?
 - Influye mucho los parametros, en la precisión a lo que uno quiere, y en los detalles que esta tendrá.
 - Photorealistic con Moody atmosphere y digital art con los parametros altos para obtener una imagen de mayor calidad.
