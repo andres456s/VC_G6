@@ -40,7 +40,7 @@ pip install opencv-python numpy matplotlib notebook
 jupyter notebook
 ```
 
-4. Abrir el archivo `notebook_calibracion.ipynb` y sigue las instrucciones del taller paso a paso.
+4. Abrir el archivo `notebook_calibracion.ipynb` y seguir las instrucciones paso a paso.
 
 ## 📷 Descripción del Notebook
 
