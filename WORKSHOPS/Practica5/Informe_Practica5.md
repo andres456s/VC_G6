@@ -15,7 +15,7 @@
 
 Para cada visor, fue necesario ajustar las gafas a la cabeza de forma firme pero cómoda. Algunos dispositivos permiten el uso con gafas ópticas, mientras que otros requieren adaptadores o presentan dificultades si se tienen problemas de visión.
 
-![img](/QuestPro.jpg)
+![img](questPro.jpg)
 
 ### 2. Encendido y calibración
 
@@ -51,7 +51,7 @@ Estas gafas se sienten más ligeras y cómodas al colocarlas. Cuentan con un peq
 
 ## Apple Vision Pro
 
-![img](/vision%20pro.jpg)
+![img](vision%20pro.jpg)
 
 Estas gafas en cuestión de calidad de imagen, son las mejores, con una definición de pantalla sobresaliente. Sin embargo, el gesto de toque no es tan intuitivo como los de Meta al principio. Además, la opción de apuntar con los ojos fue complicada al inicio y poco efectiva cuando hay muchas opciones, pero también es novedosa frente a los demás. En el aspecto auditivo son las mejores también.
 
@@ -65,7 +65,7 @@ Estas gafas en cuestión de calidad de imagen, son las mejores, con una definici
 
 ## Meta Quest Pro
 
-![img](/QuestPROO.jpg)
+![img](QuestPROO.jpg)
 
 Estas requieren de un puntero para desplazarse por el menú. Cuando las usé, veía el menú borroso debido a que tengo mucha miopía y no se pueden usar los lentes ópticos y las gafas al mismo tiempo. (El acompañante de la profesora me explicó que estas gafas requieren un accesorio específico para personas con problemas visuales.) Me parecieron bastante cómodas de usar, y la calibración bastante rápida. También destacar que tienen una interfaz bastante intuitiva.
 
@@ -80,7 +80,7 @@ También probé el Metaverso, y la experiencia fue bastante inmersiva. Los entor
 
 ## Meta Quest 3
 
-![img](/quest3.jpg)
+![img](quest3.jpg)
 
 Estas requieren de espacio para poder manejar los gestos de forma apropiada, ya que si hay muchas personas o objetos al frente no reconoce bien las manos. También, tienes dos controles que facilitan ciertas acciones como desplazarse por el menú, o para ciertos juegos son muy apropiados. En la calibración tomó algo de tiempo para que las imágenes proyectadas se vieran de una forma mucho más clara. En el aspecto auditivo fueron suficientes, sin embargo al estar en un espacio con ruido no se escucha con mucha claridad. En estas gafas también se probó el metaverso, el cual visualmente me pareció bastante agradable e inmersivo, sin embargo, no supe cómo interactuar a mayor profundidad para descubrir todo lo que este nos puede brindar, así que solo experimenté lo que sería el Home del metaverso. También destacar que tienen una interfaz bastante intuitiva.
 
