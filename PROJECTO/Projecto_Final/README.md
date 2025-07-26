@@ -2,6 +2,8 @@
 
 Este repositorio presenta un proyecto de clasificación automática de residuos orgánicos mediante técnicas de visión por computador y aprendizaje profundo. Se exploran diferentes arquitecturas de redes neuronales para mejorar el rendimiento en la tarea de clasificación de imágenes de residuos.
 
+Los modelos en formato .pth estan en el kaggle
+
 ## 🔗 Recursos del Proyecto
 
 - 📓 **Notebook de desarrollo**:  
