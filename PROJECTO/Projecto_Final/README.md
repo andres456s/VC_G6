@@ -13,6 +13,9 @@ Este repositorio presenta un proyecto de clasificación automática de residuos 
 - 📄 **Artículo completo en PDF**:  
   [Clasificador_de_residuos.pdf](./Clasificador_de_residuos.pdf)
 
+- 📄 **archivos de prueba de los modelos**:  
+  [Clasificador_de_residuos hibrido .py](./webcam_inferencia_Version2.py) y [Clasificador_de_residuos Vision trasformer.py](./webcam_inferencia_VIT_Version4.py)
+
 ## 🧠 Arquitecturas Evaluadas
 
 El estudio evalúa cuatro enfoques distintos:
@@ -36,6 +39,11 @@ ViT mostró el mejor rendimiento en precisión y estabilidad entre pliegues, aun
 ## 🧪 Dataset
 
 Se utilizó el dataset **Trash Type Detection** disponible en Kaggle, que contiene 2,527 imágenes clasificadas en seis categorías: *metal, glass, paper, trash, cardboard y plastic*.
+
+## 📌 Resultados
+ [Clasificador_de_residuos hibrido .mp4](./Hibrido.mp4) 
+ 
+ [Clasificador_de_residuos Vision trasformer.mp4](./VIT.mp4)
 
 ## 📌 Conclusiones
 
