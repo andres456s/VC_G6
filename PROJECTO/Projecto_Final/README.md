@@ -5,7 +5,7 @@ Este repositorio presenta un proyecto de clasificación automática de residuos 
 ## 🔗 Recursos del Proyecto
 
 - 📓 **Notebook de desarrollo**:  
-  https://www.kaggle.com/code/andr3spatino/fork-of-projec
+  [https://www.kaggle.com/code/andr3spatino/fork-of-projec](https://www.kaggle.com/code/andr3spatino/fork-of-project)
 
 - 📊 **Presentación en diapositivas (Gamma)**:  
   https://gamma.app/docs/Clasificador-de-Residuos-Organicos-tpijqpyeeu9htfl?mode=present#card-kwolpuxlobvb68f
@@ -41,9 +41,8 @@ ViT mostró el mejor rendimiento en precisión y estabilidad entre pliegues, aun
 Se utilizó el dataset **Trash Type Detection** disponible en Kaggle, que contiene 2,527 imágenes clasificadas en seis categorías: *metal, glass, paper, trash, cardboard y plastic*.
 
 ## 📌 Resultados
- [Clasificador_de_residuos hibrido .mp4](./Hibrido.mp4) 
- 
- [Clasificador_de_residuos Vision trasformer.mp4](./VIT.mp4)
+![VIT](\VIT.mp4)
+![hibrido](\Hibrido.mp4)
 
 ## 📌 Conclusiones
 
