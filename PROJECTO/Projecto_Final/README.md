@@ -41,8 +41,21 @@ ViT mostró el mejor rendimiento en precisión y estabilidad entre pliegues, aun
 Se utilizó el dataset **Trash Type Detection** disponible en Kaggle, que contiene 2,527 imágenes clasificadas en seis categorías: *metal, glass, paper, trash, cardboard y plastic*.
 
 ## 📌 Resultados
-![VIT](\VIT.mp4)
-![hibrido](\Hibrido.mp4)
+
+### 📌 Vit
+
+
+
+https://github.com/user-attachments/assets/ad5c9785-6959-4535-9de2-8c5d52d38aff
+
+### 📌 CNN+RestNet50
+
+
+https://github.com/user-attachments/assets/748a6ac6-4094-4701-bbfd-dc29734d79e2
+
+
+
+
 
 ## 📌 Conclusiones
 
